@@ -33,27 +33,27 @@ import {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "/videos/angle1.mp4",
-    label: "Court View",
-    description: "Wide angle overhead view of the entire court",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SW.mp4",
+    label: "View 1",
+    description: "",
   },
   angle2: {
     id: "angle2",
-    src: "/videos/angle2.mp4",
-    label: "Player 1",
-    description: "Close-up camera following Player 1",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NW.mp4",
+    label: "View 2",
+    description: "",
   },
   angle3: {
     id: "angle3",
-    src: "/videos/angle3.mp4",
-    label: "Player 2",
-    description: "Close-up camera following Player 2",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SE.mp4",
+    label: "View 3",
+    description: "",
   },
   angle4: {
     id: "angle4",
-    src: "/videos/angle4.mp4",
-    label: "Net Cam",
-    description: "Camera positioned at the net level",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NE.mp4",
+    label: "View 4",
+    description: "",
   },
 };
 

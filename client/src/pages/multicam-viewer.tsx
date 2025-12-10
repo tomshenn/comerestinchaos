@@ -17,6 +17,25 @@ import {
   Camera,
 } from "lucide-react";
 
+import Hls from "hls.js";
+
+function VideoPlayer({ src }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(videoRef.current);
+    } else {
+      // Safari fallback
+      videoRef.current.src = src;
+    }
+  }, [src]);
+
+  return <video ref={videoRef} controls />;
+}
+
 /* =============================================================================
  * VIDEO CONFIGURATION
  * =============================================================================
@@ -33,7 +52,7 @@ import {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "/videos/angle1.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/output.m3u8"
     label: "Court View",
     description: "Wide angle overhead view of the entire court",
   },

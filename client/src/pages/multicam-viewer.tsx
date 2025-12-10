@@ -52,7 +52,7 @@ function VideoPlayer({ src }) {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/output.m3u8"
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/output.m3u8",
     label: "Court View",
     description: "Wide angle overhead view of the entire court",
   },

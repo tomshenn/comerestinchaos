@@ -17,6 +17,25 @@ import {
   Camera,
 } from "lucide-react";
 
+import Hls from "hls.js";
+
+function VideoPlayer({ src }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(videoRef.current);
+    } else {
+      // Safari fallback
+      videoRef.current.src = src;
+    }
+  }, [src]);
+
+  return <video ref={videoRef} controls />;
+}
+
 /* =============================================================================
  * VIDEO CONFIGURATION
  * =============================================================================

@@ -33,25 +33,25 @@ import {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_NE.mp4",
     label: "View 1",
     description: "",
   },
   angle2: {
     id: "angle2",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_NW.mp4",
     label: "View 2",
     description: "",
   },
   angle3: {
     id: "angle3",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_SW.mp4",
     label: "View 3",
     description: "",
   },
   angle4: {
     id: "angle4",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_SE.mp4",
     label: "View 4",
     description: "",
   },

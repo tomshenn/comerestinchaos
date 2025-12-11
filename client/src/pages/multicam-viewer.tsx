@@ -136,12 +136,13 @@ type VideoAngle = keyof typeof VIDEO_CONFIG;
 // MULTICAM VIEWER
 // ===========================
 export default function MultiCamViewer() {
+  const VIDEO_DURATION = 4 * 60 + 44; // 4 minutes 44 seconds
   const allAngles: VideoAngle[] = ["angle1", "angle2", "angle3", "angle4"];
   const [mainAngle, setMainAngle] = useState<VideoAngle>("angle1");
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [duration, setDuration] = useState<number>(VIDEO_DURATION);
   const [isLoading, setIsLoading] = useState(true);
   const [controlsVisible, setControlsVisible] = useState(true);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);

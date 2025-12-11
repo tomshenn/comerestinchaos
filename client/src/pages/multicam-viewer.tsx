@@ -16,25 +16,41 @@ import {
   SkipForward,
   Camera,
 } from "lucide-react";
-
 import Hls from "hls.js";
 
-function VideoPlayer({ src }) {
-  const videoRef = useRef(null);
+// =============== HLS Video Component ===============
+function VideoPlayer({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let hls: Hls | null = null;
+
     if (Hls.isSupported()) {
-      const hls = new Hls();
+      hls = new Hls();
       hls.loadSource(src);
-      hls.attachMedia(videoRef.current);
+      hls.attachMedia(video);
     } else {
-      // Safari fallback
-      videoRef.current.src = src;
+      video.src = src; // Safari
     }
+
+    return () => {
+      if (hls) hls.destroy();
+    };
   }, [src]);
 
-  return <video ref={videoRef} controls />;
+  return (
+    <video
+      ref={videoRef}
+      className="absolute inset-0 w-full h-full object-contain"
+      playsInline
+      preload="auto"
+    />
+  );
 }
+
 
 /* =============================================================================
  * VIDEO CONFIGURATION
@@ -52,25 +68,25 @@ function VideoPlayer({ src }) {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/output.m3u8",
     label: "View 1",
     description: "",
   },
   angle2: {
     id: "angle2",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/videoB.m3u8",
     label: "View 2",
     description: "",
   },
   angle3: {
     id: "angle3",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_SE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/videoC.m3u8",
     label: "View 3",
     description: "",
   },
   angle4: {
     id: "angle4",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Domains_1080p_normalised_NE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/videoD.m3u8",
     label: "View 4",
     description: "",
   },
@@ -361,22 +377,8 @@ export default function MultiCamViewer() {
             </div>
 
             {/* Main Video - Single video element that changes src */}
-            <video
-              key={mainAngle}
-              ref={mainVideoRef}
-              className="absolute inset-0 w-full h-full object-contain"
-              muted={isMuted}
-              playsInline
-              preload="auto"
-              onLoadedMetadata={handleMainVideoLoaded}
-              onCanPlayThrough={handleMainVideoLoaded}
-              onLoadedData={handleMainVideoLoaded}
-              onTimeUpdate={handleTimeUpdate}
-              onError={(e) => console.error("Video error:", e)}
-              data-testid={`video-main`}
-            >
-              <source src={VIDEO_CONFIG[mainAngle].src} type="video/mp4" />
-            </video>
+            <VideoPlayer key={mainAngle} src={VIDEO_CONFIG[mainAngle].src} />
+
 
             {/* Play Button Overlay (when paused) */}
             {!isPlaying && !isLoading && (

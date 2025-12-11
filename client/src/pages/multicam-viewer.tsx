@@ -173,17 +173,27 @@ export default function MultiCamViewer() {
   // ===========================
   // VIDEO EVENT HANDLERS
   // ===========================
-  const handleTimeUpdate = useCallback(() => {
-    const mainVideo = mainVideoRef.current;
-    if (mainVideo) {
-      setCurrentTime(mainVideo.currentTime);
-      thumbnailRefs.current.forEach((video) => {
-        if (Math.abs(video.currentTime - mainVideo.currentTime) > 0.5) {
-          video.currentTime = mainVideo.currentTime;
-        }
-      });
+const handleTimeUpdate = useCallback(() => {
+  const mainVideo = mainVideoRef.current;
+  if (!mainVideo) return;
+
+  setCurrentTime(mainVideo.currentTime);
+
+  thumbnailRefs.current.forEach((thumb) => {
+    // Pause thumbnail first
+    const wasPlaying = !thumb.paused;
+    thumb.pause();
+
+    // Seek to main video time
+    thumb.currentTime = mainVideo.currentTime;
+
+    // Resume if it was playing
+    if (wasPlaying) {
+      thumb.play().catch(() => {});
     }
-  }, []);
+  });
+}, []);
+
 
   const handlePlayPause = useCallback(() => {
     const allVideos = getAllVideos();

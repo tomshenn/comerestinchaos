@@ -50,6 +50,7 @@ const VideoPlayer = forwardRef(function VideoPlayer(
     const video = videoRef.current;
     if (!video) return;
 
+    // Clean up previous HLS instance
     if (hlsRef.current) {
       hlsRef.current.destroy();
       hlsRef.current = null;
@@ -64,10 +65,22 @@ const VideoPlayer = forwardRef(function VideoPlayer(
       hls.loadSource(src);
       hls.attachMedia(video);
       hlsRef.current = hls;
+
+      // Trigger onLoadedMetadata when manifest parsed
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (onLoadedMetadata) onLoadedMetadata();
+      });
     } else {
       video.src = src;
     }
-  }, [src]);
+
+    return () => {
+      if (hlsRef.current) {
+        hlsRef.current.destroy();
+        hlsRef.current = null;
+      }
+    };
+  }, [src, onLoadedMetadata]);
 
   return (
     <video
@@ -85,6 +98,7 @@ const VideoPlayer = forwardRef(function VideoPlayer(
     />
   );
 });
+
 
 // ===========================
 // VIDEO CONFIG

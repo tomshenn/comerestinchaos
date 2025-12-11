@@ -377,8 +377,15 @@ export default function MultiCamViewer() {
             </div>
 
             {/* Main Video - Single video element that changes src */}
-            <VideoPlayer key={mainAngle} src={VIDEO_CONFIG[mainAngle].src} />
-
+     <VideoPlayer
+        ref={mainVideoRef}
+        src={VIDEO_CONFIG[currentAngle].src}
+        onTimeUpdate={handleTimeUpdate}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onLoadedMetadata={() => {}}
+        onCanPlay={() => {}}
+      />
 
             {/* Play Button Overlay (when paused) */}
             {!isPlaying && !isLoading && (

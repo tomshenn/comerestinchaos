@@ -33,25 +33,25 @@ import {
 const VIDEO_CONFIG = {
   angle1: {
     id: "angle1",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_NE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Opening_1080p_normalised_NE.mp4",
     label: "View 1",
     description: "",
   },
   angle2: {
     id: "angle2",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_NW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Opening_1080p_normalised_SE.mp4",
     label: "View 2",
     description: "",
   },
   angle3: {
     id: "angle3",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_SW.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Opening_1080p_normalised_NW.mp4",
     label: "View 3",
     description: "",
   },
   angle4: {
     id: "angle4",
-    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Lanterns_1080p_normalised_SE.mp4",
+    src: "https://pub-51abfb3ede7e43b4b2d539bcec8990ae.r2.dev/Opening_1080p_normalised_SW.mp4",
     label: "View 4",
     description: "",
   },
@@ -318,7 +318,7 @@ export default function MultiCamViewer() {
         <div className="flex-1 flex flex-col p-4 lg:p-6">
           
            <h1 className="text-xl font-bold text-black mb-4">
-    Come Rest in Chaos (lantern light painting scene)
+    Come Rest in Chaos (opening 10 minutes)
   </h1>
           <p className="text-sm text-gray-300 mb-4 italic">
   Multicam viewer built by Tom Shennan

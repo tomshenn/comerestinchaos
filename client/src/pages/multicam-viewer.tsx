@@ -496,7 +496,7 @@ export default function MultiCamViewer() {
 
             {/* Footer */}
   <footer className="text-center text-black-500 text-sm p-4 italic">
-    © 2020
+ Multicam viewer built by Tom Shennan
   </footer>
         </div>
 

@@ -493,11 +493,6 @@ export default function MultiCamViewer() {
             
             </div>
           </div>
-
-            {/* Footer */}
-  <footer className="text-center text-black-500 text-sm p-4 italic">
- Multicam viewer built by Tom Shennan
-  </footer>
         </div>
 
         {/* Thumbnail Sidebar */}
@@ -529,6 +524,11 @@ export default function MultiCamViewer() {
               />
             ))}
           </div>
+
+                 {/* Footer */}
+  <footer className="text-center text-black-500 text-sm p-4 italic">
+ Multicam viewer built by Tom Shennan
+  </footer>
 
           {/* Keyboard Shortcuts Help */}
           <div className="hidden lg:block mt-auto pt-4 border-t border-border">

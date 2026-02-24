@@ -322,12 +322,12 @@ export default function MultiCamViewer() {
   </h1>
          <p className="text-sm text-gray-300 mb-4 italic">
   <a
-    href="https://www.shivaangee.com/crc"
+    href="https://www.shivaangee.com/crcmulticam"
     target="_blank"
     rel="noopener noreferrer"
     className="text-blue-500 underline"
   >
-    shivaangee.com/crc
+    shivaangee.com/crcmulticam
   </a>
 </p>
           {/* Main Video Container */}
@@ -553,7 +553,7 @@ export default function MultiCamViewer() {
                 <kbd className="px-2 py-0.5 bg-muted rounded text-muted-foreground font-mono">
                   1-4
                 </kbd>
-                <span className="text-muted-foreground">Switch angle</span>
+                <span className="text-muted-foreground">Switch view</span>
               </div>
             </div>
           </div>

@@ -322,12 +322,12 @@ export default function MultiCamViewer() {
   </h1>
          <p className="text-sm text-gray-300 mb-4 italic">
   <a
-    href="https://www.shivaangee.com/comerestinchaos"
+    href="https://www.shivaangee.com/crc"
     target="_blank"
     rel="noopener noreferrer"
     className="text-blue-500 underline"
   >
-    shivaangee.com/comerestinchaos
+    shivaangee.com/crc
   </a>
 </p>
           {/* Main Video Container */}

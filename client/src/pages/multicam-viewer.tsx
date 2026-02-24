@@ -493,6 +493,11 @@ export default function MultiCamViewer() {
             
             </div>
           </div>
+
+            {/* Footer */}
+  <footer className="text-center text-black-500 text-sm p-4 italic">
+    © 2020
+  </footer>
         </div>
 
         {/* Thumbnail Sidebar */}
@@ -557,11 +562,6 @@ export default function MultiCamViewer() {
               </div>
             </div>
           </div>
-
-            {/* Footer */}
-  <footer className="absolute bottom-0 w-full text-center text-gray-300 text-sm p-4 italic">
-Multicam viewer built by Tom Shennan
-  </footer>
         </div>
       </div>
     </div>

@@ -318,7 +318,7 @@ export default function MultiCamViewer() {
         <div className="flex-1 flex flex-col p-4 lg:p-6">
           
            <h1 className="text-xl font-bold text-black mb-4">
-    Come Rest in Chaos (2) Light-painting with the Audience
+    Come Rest in Chaos (2): Light-painting with the Audience
   </h1>
          <p className="text-sm text-gray-300 mb-4 italic">
   <a
@@ -524,11 +524,6 @@ export default function MultiCamViewer() {
               />
             ))}
           </div>
-
-                 {/* Footer */}
-  <footer className="text-center text-grey-500 text-sm p-4 italic">
- Multicam viewer built by Tom Shennan
-  </footer>
 
           {/* Keyboard Shortcuts Help */}
           <div className="hidden lg:block mt-auto pt-4 border-t border-border">

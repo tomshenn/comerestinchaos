@@ -318,8 +318,8 @@ export default function MultiCamViewer() {
         <div className="flex-1 flex flex-col p-4 lg:p-6">
           
            <h1 className="text-xl font-bold text-black mb-4">
-    Come Rest in Chaos (red room scene)
-  </h1>
+Come Rest in Chaos (3): Red Recursion and Chaos
+           </h1>
        <p className="text-sm text-gray-300 mb-4 italic">
   <a
     href="https://www.shivaangee.com/crcmulticam"
